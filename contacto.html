@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logoBideki.png">
+    <title>CONTACTO-BIDEKI</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!--Header-->
+    <!-- esta clase "header" contiene siempre el menú con los enlaces a los diferentes .html y una imagen(bideki-portada) 
+        junto a un <p> y <h1> -->
+
+    <section class="header">
+        <nav>
+            <a href="inicio.html" target="_blank"> <img src="img/logoBideki.png" alt="BIDEKI"></a>
+            <div class="navLinks">
+                <ul>
+                    <li><a href="inicio.html" target="_blank">INICIO</a>
+                    </li>
+                    <li><a href="info.html" target="_blank">SOBRE
+                            NOSOTROS</a></li>
+                    <li><a href="#servicios">SERVICIOS</a></li>
+                    <li><a href="contacto.html" target="_blank"></a>CONTÁCTANOS</a>
+                    </li>
+                    <li class="menuDesplegable">
+                        <!--índice que se despliega,niguno relacionado pero x añadir una función extra-->
+                        <a href="#">ACTUALIDAD ▼</a>
+                        <ul class="menuDesplegableMenu">
+                            <li><a href="#">NOTICIAS</a></li>
+                            <li><a href="#">PROYECTOS</a></li>
+                            <li><a href="#">JORNADAS</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="textBox">
+            <h1>CONTACTO</h1><br><br>
+            <p>Nosotros desarrollaremos e implemetares la mejor solución para cada problema</p>
+
+        </div>
+    </section>
+
+    <!---1º DIV-->
+
+    <!-- los "fa fa-...." son los iconos que se emplean xa q se representen en el navegador(es una extensión llamada FontAwesome) -->
+    <!-- Enlace de donde he sacado ejemplos y toda la info xa saber como funciona: https://fontawesome.com/v4/examples/ -->
+    <div class="locationContainer">
+        <div class="social">
+            <div>
+                <i class="fa fa-map-marker-alt"></i>
+                <div>
+                    <h5>Vitoria-Gasteiz</h5>
+                    <p>Polígono. Industrial de Jundiz</p>
+                </div>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <div>
+                    <h5>945276538</h5>
+                    <p>Lunes a Viernes, 8:30 a 18:30</p>
+                </div><br>
+            </div>
+            <div>
+                <i class="fa fa-envelope-o"></i>
+                <div>
+                    <h5>administracion@bideki.eus</h5>
+                    <p>Cualquier cuestión, no dude en contarctarnos</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="location">
+            <!-- IFRAME-> Se usa cuando quiero insertar otra pagina html en la actual -->
+            <!-- ALLOWFULLSCREN -> Xa poder verlo a mayor tamaño -->
+            <!-- LOADING = "LAZY" -> Xa optimizar rendimiento(carga - datos al comienxo) -->
+            <!-- REFERRERPOLICY = "NO-REFERRER-WHEN-DOWNGRADE"-> Medida de seguridad xa porteger al usuario(hace q el mavegador no envie el encabezado 'referer' cuando la petición esta heca desde un sitio seguro a uno inseguro) -->
+            <!-- En este enlace se observa el codigo usado: https://developers.google.com/maps/documentation/embed/get-started?hl=es-419 -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.567847168175!2d-2.7440902!3d42.8355644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4fc1ad55f9b03b%3A0x1bbcf89e3fa6cc6c!2sBideki+Eficiencia+Energ%C3%A9tica!5e0!3m2!1ses!2ses!4vINSERT_KEY_HERE"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <!---2º DIV-->
+
+    <section class="formulario">
+        <h2>Formulario de contacto</h2><br>
+        <form>
+            <div class="campo">
+                <label for="nombre">Nombre completo<span>*</span></label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="campo">
+                <label for="gender">Género:</label>
+                <select id="gender" name="gender">
+                    <option value="sin_especificar">Sin especificar</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label for="empresa">Empresa</label>
+                <input type="text" id="empresa" name="empresa">
+            </div>
+            <div class="campo">
+                <label for="email">Email<span>*</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="campo">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono">
+            </div>
+            <div class="campo">
+                <label for="asunto">Asunto</label>
+                <textarea id="asunto" name="asunto"></textarea>
+            </div>
+            <div class="campo mensaje">
+                <label for="mensaje">Mensaje<span>*</span></label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            </div>
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">Acepto los términos y condiciones</label>
+            <div class="boton">
+                <button type="submit">Enviar</button>
+            </div>
+
+        </form>
+    </section>
+
+    <!-- Footer-->
+    <!-- los "fa fa-...." son los iconos que se emplean xa q se representen en el navegador(es una extensión llamada FontAwesome) -->
+    <!-- Enlace de donde he sacado ejemplos y toda la info xa saber como funciona: https://fontawesome.com/v4/examples/ -->
+
+    <footer>
+        <div class="footerContainer">
+            <div class="footerColumn">
+                <h3>Navegación</h3>
+                <!-- ÍNDICE DA LA IZQ QUE LLEVA A OTRAS PAHINAS HTML -->
+                <ul>
+                    <li><a href="inicio.html" target="_blank">Inicio</a>
+                    </li>
+                    <li><a href="info.html" target="_blank">Acerca
+                            de
+                            nosotros</a></li>
+                    <li><a href="contacto.html" target="_blank">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footerColumn">
+                <!-- COLUMNA DEL MEDIO -->
+                <h3>Contáctanos</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Dirección: C/ Uzbina 24, Vitoria-Gasteiz </li>
+                    <li><i class="fas fa-phone"></i> Número de teléfono: 945276538</li>
+                    <li><i class="fas fa-envelope"></i> Correo electrónico: administracion@bideki.eus</li>
+                </ul>
+            </div>
+            <div class="footerColumn">
+                <!-- COLUMNA DE LA DERECHA -->
+                <h3>Síguenos</h3>
+                <div class="redSocial">
+                    <a href="https://www.facebook.com/?locale=es_ES" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+                    <a href="https://twitter.com/?lang=es" class="fa fa-twitter"></a>
+                    <a href="https://es.linkedin.com/" class="fa fa-linkedin"></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <!-- &copy: es el símbolo de copyright  -->
+            <small>&copy;2024 <b> BIDEKI</b> - Todos los derehos reservados</small>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

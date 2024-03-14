@@ -1,0 +1,1030 @@
+/* ----- GENERAL ----- */
+/* ESTILOS PARA TODOS LOS ELEMENTOS */
+* {
+    margin: 0;
+    /* ELIMINA MARGENES PREDETERMINADOS */
+    padding: 0;
+    /* ELIMINA RELLENO PREDETERMINADO */
+    font-family: Helvetica, sans-serif, Arial;
+}
+
+/* ENCABEZADOS PRINCIPALES */
+h1 {
+
+    font-size: 3rem;
+    /*  TAMAÑO DE LA FUENTE TRIPLE DEL TAMAÑP DE LA FUENTE BASE */
+    font-weight: bold;
+    /* NEGRITA */
+    text-align: center;
+    margin-top: 2rem;
+    /* MARGENSUP 2 VECES EL TAMAÑO TEXTO */
+    margin-bottom: 10px;
+}
+
+/* ENCABEZADOS TERCIARIOS */
+h3 {
+    text-align: center;
+    /* CENTRAR h3 */
+    font-weight: 600;
+    margin: 10px 0;
+
+}
+
+/* TEXTOS */
+p {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+/* EN inicio.html --> 2 VECES -- EN info.html --> 1 VEZ -- contacto.html --> NO SE USA */
+/* SE USA PARA DEFINIR LAS FOTOS CON UN PEQUEÑO TEXTO */
+.row {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ----- HEADER(común) ----- */
+/* SE FIJA LA IMAGEN DE FUERA DE LA OFICINA */
+.header {
+
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 11, 27, 0.7)), url(../img/bideki-portada.png);
+    background-position: center;
+    /* SE CENTRA LA IMAGEN DE ARRIBA(vertical y horizontal) */
+    background-size: cover;
+    /* AJUSTA EL TAMAÑO DE LA IMAGEN DE FONDO XA CUBRIR TODO EL ÁREA, */
+    position: relative;
+    /* ESTABLECE LA POSICIÓN DEL ELEMENTO, XO PERMITE AJUSTES DE POSICION CON OTRAS PROPIEDADES(top, right, left...) */
+}
+
+/* DENTRO DEL HEADER */
+nav {
+    display: flex;
+    width: 90%;
+    /* OCUPA EL 90% DEL ANCHO DEL PADRE(header)*/
+    padding: 2% 6%;
+    /*  EL PADDING SUP E INF ES 2% Y EL LEFT Y RIGHT DEL 6%*/
+    justify-content: space-between;
+    /* ESPACIO UNIFORME */
+    align-items: center;
+    /* ALINEA HORIZONTALMENTE*/
+    position: fixed;
+    /* FIJA LA POSICION DEL NAV EN EL NAVEGADOR DE LA PÁGINA WEB(xa que se vea siempre aunque tires xa abajo en la página) */
+    background-color: #fff;
+    border-bottom: 3px solid black;
+    /* BORDE CONTINUO DE 3 px ABAJP DEL nav */
+    z-index: 9999;
+    /* "MEDIDA DE SEGURIDAD XA ASEGURAR QUE EL NAV SIEMPRE ESTÉ X ENCIMA DE LOS DEMÁS ELEMENTOS DE LA PÁGINA" */
+}
+
+/* IMAGEN DENTRO DEL HEADER */
+nav img {
+    width: 200px;
+
+}
+
+/* ENLACES DENTRO DEL HEADER Y DENTRO DEL NAV*/
+.navLinks {
+    flex: 1;
+    /* ELEMENTO CRECE O SE ENCOGE, OCUPANDO TOO EL ESPACIO  */
+    text-align: right;
+    /* ALÍNEA HACIA LA DERECHA */
+    justify-content: space-between;
+}
+
+/* LIST ITEMS DEL HEADER*/
+.navLinks ul li {
+    list-style: none;
+    /* BORRA POSIBLES ESTILOS PREDEERMINADOS(borra los números o puntos que salen antes de los nombres) */
+    display: inline-block;
+    /* EN LÍNEA */
+    justify-content: center;
+    padding: 8px 12px;
+    /* RELLENO DE 8px ARRIBA Y ABAJO Y 12 px A LA IZQ Y DRCHA */
+    position: relative;
+    /*  ESTABLECE POSICIONAMIENTO COMO RELATIVO*/
+}
+
+/* ENLACES DEL HEADER*/
+.navLinks ul li a {
+    color: #000000;
+    text-decoration: none;
+    /* BORRA EL SUBRAYDAO Q VIENE X DEFECTO */
+    font-size: 13px;
+}
+
+/* XA Q APAREZCA UNA BARRA DEBAJO DE LOS NOMBRES DEL HEADER. LOS DOS SIGUEINTES PUNTOS SON OARA CREAR EL EFECTO "VISUAL" AL PASAR EL CURSOR X ENCIMA DE LOS NOMBRES*/
+.navLinks ul li::after {
+    content: '';
+    /* CREA UN PSEUDO-ELEMENTO DESPUES DE CADA ELEMENTO <li>. AYUDA A AÑADIR EL EFECTO VISUAL*/
+    width: 0%;
+    /* INICIALMETE INVISIBLE (raya roja)*/
+    height: 2px;
+    /* 2px DE TEMAÑO DE LÍNEA*/
+    background: #f44336;
+    display: block;
+    /* XA Q WIDTH Y HEIFHT SE PUEDAN APLICAR */
+    margin: auto;
+    /* CENTRA HORIZONTALMENTE */
+    transition: 0.5s;
+    /* TRANSICION QUE AFECTA AL ANCHO*/
+
+}
+
+/* PARA QUE APAREZCA LA LÍNEA CUANDO PONES CURSOR ENCIMA. DEL CENTRO HACIA LOS LADOS */
+.navLinks ul li:hover::after {
+    width: 100%;
+}
+
+/* CONTENIDO Q APARECE ENCIMA DE LA IMAGEN DENTRO DEL HEADER. CADA PÁGINA TIENE FRASES DIFERENTES*/
+.textBox {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    /* CONTENEDOR HIJO DENTRO DEL PADRE */
+    top: 50%;
+    /* BORDE SUPERIOR AL 50% DE LA ALTURA DEL PADRE*/
+    left: 50%;
+    /* BORDE IZQ AL 50% DE LA ANCHURA DEL PADRE*/
+    transform: translate(-50%, -50%);
+    /* CENTRA EL CONTEDENDOR HIJO HORIZONTAL Y VERTICALMENTE RESPECTO DEL PADRE, ASÍ SE COMPENA LAS POSICIONES top Y left Q SOLO SE DEFINEN X SU BORDE IZQ ARRIBA*/
+    text-align: center;
+}
+
+.menuDesplegableMenu {
+    display: none;
+    /* XA Q NO SE VEA AL PRINCIPIO */
+    position: absolute;
+    /* CONTENEDOR HIJO DENTRO DEL PADRE */
+    background-color: transparent;
+    /* FONDO TRANSPARENTE */
+    min-width: 160px;
+    /* MANERA DE SEGURIDAD PARA Q SE LEA BIEN LAS LETRAS Q SE DESPLIEGAN */
+    z-index: 1;
+    /* "MEDIDA DE SEGURIDAD XA ASEGURAR QUE EL NAV(nivel de apilamineto) SIEMPRE ESTÉ X ENCIMA DE OTROS ELEMENTOS CON z-indez <" */
+}
+
+/* MUESTRA EL MENU CUANDO PONES ENCIMA CURSOS */
+.menuDesplegable:hover .menuDesplegableMenu {
+    display: block;
+    /* CAMBIA DE none A BLOCK */
+}
+
+/* LIST ITEMS DEL DESPLEGABLE */
+.menuDesplegableMenu li {
+    padding: 8px 12px;
+    /* RELLENO DE 8px ARRIBA Y ABAJO Y 12 px A LA IZQ Y DRCHA */
+}
+
+/* SIEMPRE FONDO TRANSPARENTE(hata cuadno cursor esta encima) */
+.menuDesplegableMenu li:hover {
+    background-color: transparent;
+}
+
+/* ENLACES */
+.menuDesplegable a {
+    display: inline-block;
+    /* XA Q SE PUEDA USAR ESTILOS(relleno...) */
+    color: #ad4b1a;
+    text-decoration: none;
+    /* BORRA EL SUBRAYDAO Q VIENE X DEFECTO */
+    font-size: 13px;
+    padding: 8px 12px;
+    /* RELLENO DE 8px ARRIBA Y ABAJO Y 12 px A LA IZQ Y DRCHA */
+}
+
+.menuDesplegable:hover a {
+    background-color: #dbdada;
+}
+
+/* XA Q APAREZVA EL TRIANGUO AL FINAL DE CADA ELEMENTO */
+.menuDesplegable:hover a:after {
+    content: " ▲";
+}
+
+
+.textBox h1 {
+    font-size: 62px;
+}
+
+.textBox p {
+    margin: 10px 0 40px;
+    font-size: 25px;
+    color: #fff;
+}
+
+/* SE USA EN INFO E INICIO */
+.heroBtn {
+    padding: 10px 30px;
+    border-radius: 50px;
+    /* REDONDEAR */
+    font-size: 1.2rem;
+    /*  TAMAÑO DE LA FUENTE 1.5 VECES MAYOR DEL TAMAÑO DE LA FUENTE BASE */
+    text-decoration: none;
+    /* BORRA EL SUBRAYDAO Q VIENE X DEFECTO */
+    color: #ffffff;
+    background-color: #d64541;
+    transition: all 0.3s ease;
+    /* ALL --> XA Q AFECTE A TODAS LAS PROPIEDADES QUE CAMBIAN EN EL hover Y TMB ESTÉN DEFINIDAD AQUI */
+    /* 0.3s --> DURACION DE LA TRANSICION*/
+    /* ease --> RITMO DE LA TRANSICION: 1º DESPACIO, ACELERA EN MEDIO Y TERMINA DESPACIO(como es 0.3s se aprecia poco) */
+
+}
+
+.heroBtn:hover {
+    background-color: #b2383e;
+    transform: translateY(-2px);
+}
+
+
+
+/* ----- FOOTER(común) ----- */
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+}
+
+/* "PADRE" */
+.footerContainer {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/* HAY 3 */
+.footerColumn {
+    flex-basis: 30%;
+    /* PARA QUE CADA COLUMNA OCUPE ESE PROCENTAJE */
+}
+
+.footerColumn h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.footerColumn ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.footerColumn li {
+    margin-bottom: 15px;
+}
+
+.footerColumn a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* --------------------------------------------------------------------- */
+/* ENLACES DE redSocial DENTRO DE footerColumn(ambos) */
+.footerColumn .redSocial a {
+    display: inline-block;
+    text-decoration: none;
+    /* BORRA EL SUBRAYDAO Q VIENE X DEFECTO */
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #0a141d;
+    text-align: center;
+    transition: all 300ms ease;
+    /* ALL --> XA Q AFECTE A TODAS LAS PROPIEDADES QUE CAMBIAN EN EL hover Y TMB ESTÉN DEFINIDAD AQUI */
+    /* 0.3s = 300ms --> DURACION DE LA TRANSICION*/
+    /* ease --> RITMO DE LA TRANSICION: 1º DESPACIO, ACELERA EN MEDIO Y TERMINA DESPACIO(como es 0.3s se aprecia poco) */
+
+}
+
+
+.footerColumn .redSocial a {
+    color: aqua;
+    /* COLOR IMAGENES(tw, inst, yt) */
+
+}
+
+
+/* @media screen and (max-width: 768px) {
+    .footerContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footerColumn {
+        margin-bottom: 30px;
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .redSocial {
+        margin-top: 20px;
+    }
+} */
+
+/* BARRA HORIZONTAL ABAJO DEL HEADER */
+.copyright {
+    background-color: #282727;
+    padding: 15px 10px;
+    /*PARA QUE SEA HORIZONTAL LA BARRA */
+    text-align: center;
+    color: #fff;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/* ----- INICIO.html ----- */
+
+/* 1º DIV */
+.nuestrasInstalaciones {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.nuestrasInstalaciones h1 {
+    font-size: 2rem;
+    /*  TAMAÑO DE LA FUENTE DOS VECES MAYOR DEL TAMAÑO DE LA FUENTE BASE */
+    font-weight: bold;
+    /* NEGRITA */
+    color: #2d2d2d;
+    text-transform: uppercase;
+    /* XA TRABSFROMAR TODO LO QUE SE ESCRIBA ENTRE ETIQUETAS <h1>...</h1> se transfrorme a mayúsculas */
+    text-align: center;
+    margin-top: 3rem;
+    /*  MARGEN SUPERIOR TRES VECES MAYOR A LA BASE */
+    margin-bottom: 1rem;
+    /*  MARGEN INFERIOR IGUAL AL TAMAÑO BASE */
+}
+
+.nuestrasInstalaciones p {
+    font-size: 1rem;
+    /*  TAMAÑO DE LA FUENTE DIFGUAL AL TAMAÑO DE LA FUENTE BASE */
+    line-height: 1.5;
+    color: #6b6b6b;
+    text-align: justify;
+    margin-bottom: 2rem;
+    /*  MARGEN INFERIOR DOS VECES MAYOR AL TAMAÑO BASE */
+
+}
+
+/* IMÁGENES Y TEXTO */
+.nuestrasInstalacionesCol {
+    flex-basis: 32%;
+    /* PARA QUE CADA COLUMNA OCUPE ESE PROCENTAJE */
+    border-radius: 10px;
+    /* REDONDEAR */
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* IMÁGENES Y TEXTO */
+.nuestrasInstalacionesCol img {
+    width: 100%;
+    display: block;
+}
+
+/* XA PONER FRASE ENCIMA DE IMAGEN */
+.layer {
+    background: transparent;
+    /* SOLO APAREZCA LAS LETRAS */
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /* CONTENEDOR HIJO DENTRO DEL PADRE */
+    top: 0;
+    left: 0;
+    /* SIN LAS LÍNEAS DE ARRIBA LAS LETRAS NO APARECERÍAN ENCIMA DE LA IMAGEN */
+    transition: 0.5s;
+}
+
+/* COLOR DE FONDO CUADNO CURSOR ENCIMA */
+.layer:hover {
+    background: rgba(226, 34, 0, 0.7);
+}
+
+/* ESTILOS DE LAS FRASES ENCIMA DE LAS IMAGENES*/
+.layer h3 {
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    background-color: #000000;
+    width: fit-content;
+    /* XA SOBRRESCRIBIR FRASE */
+    font-size: 26px;
+    bottom: 0;
+    /* POSICIONA EN LA PARTE DE ABAJO */
+    left: 50%;
+    /* POSICIONA A LA MITAD DEL LADI IZQ RESPECTO PADRE, ASÍ SE VE CENTRADAS LAS */
+    transform: translateX(-50%);
+    /* MUEVE HORIZONTALMENTE HACA LA IZQUIERDA LA MITAD DEL SU PROPIO ANCHO PARA CENTRARLO */
+    position: absolute;
+    /* CONTENEDOR HIJO DENTRO DEL PADRE */
+    opacity: 1;
+    /* TOTALMENTE OPACO(xa q se vea la frase) */
+    transition: 0.5s;
+    /* TRANSICION QUE AFECTA AL ANCHO*/
+
+}
+
+.layer:hover h3 {
+    bottom: 49%;
+    /* MUEVE h3 XA Q SU BORDE INFERIOR ESTE AL 49% DEL ALTO TOTAL DEL PADRE(xa q se desplace un poco + arriba de la mitad) */
+    opacity: 1;
+    /* TOTALMENTE OPACO(xa q se siga viendo la frase) */
+}
+
+
+
+/* 2º DIV */
+
+/* TABLA */
+.principalesServicios {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    margin-top: 100px;
+    background-color: rgb(200, 200, 200);
+    ;
+}
+
+/* "TÍTULO" DEL DIV */
+.principalesServicios h1 {
+    font-size: 2rem;
+    /*  TAMAÑO DE LA FUENTE DOS VECES MAYOR AL TAMAÑO DE LA FUENTE BASE */
+    font-weight: bold;
+    /* NEGRITA */
+    color: #000000;
+    text-transform: uppercase;
+    /* XA TRABSFROMAR TODO LO QUE SE ESCRIBA ENTRE ETIQUETAS <h1>...</h1> se transfrorme a mayúsculas */
+    text-align: center;
+    margin-top: 2rem;
+    /*  MARGEN SUPERIOR DOS VECES MAYOR AL TAMAÑO BASE */
+    margin-bottom: 2rem;
+    /*  MARGEN INFERIOR DOS VECES MAYOR AL TAMAÑO BASE */
+}
+
+
+/* tabla */
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+
+
+}
+
+/* FILAS Y COLUMNAS */
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+}
+
+/* ESTILOS PARA FILAS PARES, ASÍ HAY UNA PEQUEÑA VARIACION DE COLOR ENTRE FILAS*/
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* ESTILOS PARA FILAS IMPARES, ASÍ HAY UNA PEQUEÑA VARIACION DE COLOR ENTRE FILAS*/
+tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+
+/* 3º DIV */
+
+.areasConocimiento {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 100px;
+
+}
+
+.areasConocimientoCol {
+    flex-basis: 31%;
+    /* PARA QUE CADA COLUMNA OCUPE ESE PROCENTAJE */
+    border-radius: 10px;
+    /* REDONDEAR */
+    margin-bottom: 5%;
+    text-align: left;
+}
+
+/* IMAGEN */
+.areasConocimientoCol img {
+    width: 100%;
+    height: 65%;
+    border-radius: 10px;
+    /* REDONDEAR */
+}
+
+/* TITULO DEL div (frase "area de conocimiento") */
+.areasConocimiento h1 {
+    font-size: 2rem;
+    /*  TAMAÑO DE LA FUENTE DOS VECES MAYOR AL TAMAÑO DE LA FUENTE BASE */
+    font-weight: bold;
+    /* NEGRITA */
+    color: #2d2d2d;
+    text-transform: uppercase;
+    /* XA TRABSFROMAR TODO LO QUE SE ESCRIBA ENTRE ETIQUETAS <h1>...</h1> se transfrorme a mayúsculas */
+    text-align: center;
+    margin-top: 3rem;
+    /*  MARGEN SUPERIOR TRES VECES MAYOR AL TAMAÑO BASE */
+    margin-bottom: 1rem;
+    /*  MARGEN INFERIOR IGUAL AL TAMAÑO BASE */
+}
+
+/* FRASE DEBAJO DEL h1*/
+.areasConocimiento p {
+    font-size: 1rem;
+    /*  TAMAÑO DE LA FUENTE IGUAL AL TAMAÑO DE LA FUENTE BASE */
+    line-height: 1.5;
+    color: #6b6b6b;
+    text-align: justify;
+    margin-bottom: 2rem;
+    /*  MARGEN INFERIOR DOS VECES MAYOR AL TAMAÑO BASE */
+}
+
+/* TITULO DEBAJO DE LA IMAGEN */
+.areasConocimientoCol h3 {
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+/* 4º DIV */
+
+/* div DONDE SE FIJA IMAGEN Y DEMAS ESTILOS */
+.cta {
+    width: 80%;
+    margin: 100px auto;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/contactanos.jpg);
+    /* FIJAR IMAGEN DE FONDO DEL div */
+    background-position: center;
+    background-size: cover;
+    /* AJUSTA EL TAMAÑO DE LA IMAGEN DE FONDO XA CUBRIR TODO EL ÁREA, */
+    border-radius: 10px;
+    /* REDONDEAR */
+    text-align: center;
+    padding: 100px 0;
+}
+
+/* TÍTULO DEL DIV(SE USA COMO FRASE, NO APARECE MÁS LETRAS EN EL DIV) */
+.cta h1 {
+    color: #fff;
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+/* @media(max-width: 700px) {
+    .cta h1 {
+        font-size: 24px;
+    }
+} */
+
+
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+/* ----- INFO.html ----- */
+
+/* 1º DIV */
+.sobreNosotros {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    border-radius: 10px;
+    /* REDONDEAR */
+}
+
+.sobreNosotrosCol {
+    flex-basis: 48%;
+    /* PARA QUE CADA COLUMNA OCUPE ESE PROCENTAJE */
+    padding: 15px 2px;
+}
+
+/* IMAGEN DEL DIV (nieve)*/
+.sobreNosotros img {
+    width: 100%;
+}
+
+/* TITULO DEL div */
+.sobreNosotros h1 {
+    margin-top: 0;
+}
+
+/* TEXTO DEL div */
+.sobreNosotros p {
+    padding: 13px 0 23px;
+    text-align: justify;
+    color: #666666;
+}
+
+
+/* @media (max-width: 768px) {
+    .sobreNosotros {
+        flex-direction: column;
+    }
+
+    .sobreNosotrosCol {
+        flex-basis: 100%;
+    }
+} */
+
+
+/* 2º DIV */
+
+/* TABLA */
+.tablaSectores {
+    background: rgb(228, 228, 228);
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* TÍTULO DEL DIV */
+.tablaSectores h1 {
+    font-size: 3rem;
+    /*  TAMAÑO DE LA FUENTE TRES VECES MAYOR AL TAMAÑO DE LA FUENTE BASE */
+    font-weight: bold;
+    /* NEGRITA */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    /* XA TRABSFROMAR TODO LO QUE SE ESCRIBA ENTRE ETIQUETAS <h1>...</h1> se transfrorme a mayúsculas */
+    color: #333;
+    margin-bottom: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    /* XA QUE NO APAREZCAN LA LÍNEA ENTRE LINEAS Y FILAS(solo se diferencian por el backgraound color de las celdas pares e impares) */
+    width: 100%;
+}
+
+/* FILAS Y COLUMNAS */
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+/* ESTILOS PARA FILAS PARES, ASÍ HAY UNA PEQUEÑA VARIACION DE COLOR ENTRE FILAS*/
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+/* ESTILOS XA NOMBRES COLUMNAS */
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+
+
+
+/* 3º DIV */
+
+/* PADRE */
+.mision {
+    width: 80%;
+    /* "RECORTADO" X LOS LADOS */
+    margin: auto;
+    text-align: justify;
+    padding-top: 30px;
+
+}
+
+/* HIJOS(3) */
+.misionCol {
+    flex-basis: 31%;
+    /* PARA QUE CADA COLUMNA OCUPE ESE PROCENTAJE */
+    background: #d18710;
+    border-radius: 10px;
+    /* REDONDEAR */
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    /* TRANSICION QUE AFECTA AL ANCHO*/
+}
+
+/* TITULO DENTRO DEL div */
+.mision h1 {
+    font-size: 3rem;
+    /*  TAMAÑO DE LA FUENTE TRES VECES MAYOR AL TAMAÑO DE LA FUENTE BASE */
+    font-weight: bold;
+    /* NEGRITA */
+    color: #004080;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 10px;
+}
+
+/* TEXTO DENTRO DEL Div */
+.mision p {
+    font-size: 1.2rem;
+    /*  TAMAÑO DE LA FUENTE 1.3 VECES MAYOR AL TAMAÑO DE LA FUENTE BASE */
+    line-height: 1.5;
+    /* + ESPACIO ENTRE LINEAS */
+    color: #555;
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto;
+    /* MARGENES "AUTOMATICO" EN LADOS(xa centrar) */
+    padding: 2rem;
+    /*  PADDING 2 VECES MAYOR ENC OMPARACIÓN A LA BASE */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    /* XA Q ESTETICAMENTE ESTE EN UN RECUADRO DENTRO DEL div */
+    border-radius: 10px;
+    /* REDONDEAR */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    /* SOMBRA DEL RECUADRO */
+}
+
+
+
+.misionCol:hover {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* 
+@media(max-width: 700px) {
+    .row {
+        flex-direction: column;
+    }
+} */
+
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+/* ----- CONTACTO.html ----- */
+
+/* 1º DIV */
+
+/* PADRE */
+.locationContainer {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 40px;
+}
+
+/* HIJO- MAPA - PARTE DE LA DRCHA */
+.location {
+    flex-grow: 1;
+    width: 60%;
+    margin-right: 100px;
+    margin-left: 70px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+/* XA EL MAPA DE LA UBICACIÓN EN GOOGLE MAPS(no es + q una url con sus propiedadeslocationContainer)*/
+.location iframe {
+    margin-top: 40px;
+    width: 100%;
+    height: 37.5vh;
+    border: none;
+    margin-left: 50px;
+}
+
+
+/* 
+@media screen and (max-width: 768px) {
+    .location {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .location iframe {
+        margin-top: 20px;
+        height: 250px;
+        margin-left: 0;
+    }
+} */
+
+
+/* HIJO-PARTE DE LA IZQ */
+.social {
+    margin-top: 40px;
+}
+
+/* LOS 3 APARTADOS Q HAY EN LA IZQ(ubicacion,tlg y email) */
+.social div {
+    display: flex;
+    margin-left: 50px;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 10px;
+
+
+}
+
+/* FOTOS QUE HAY(insertadas con la extensión) */
+.social div .fa {
+    font-size: 28px;
+    color: #f44336;
+    margin-right: 10px;
+    width: 10%;
+}
+
+/* DIFERENCIA ENTRE LAS LÍNEAS DE : CIUDAD Y CALLE; TLF Y HORARIO; CORREO Y FRASE */
+.social div div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.social h5,
+.social p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+
+}
+
+/* 2º DIV */
+
+/* PADRE */
+.formulario {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+
+
+
+}
+
+/* TITULO DEL Div */
+.formulario h2 {
+    margin-top: 0;
+}
+
+/* HIJOS */
+.campo {
+    margin-bottom: 20px;
+
+}
+
+/* TANTOS COMO CAMPOS A RELLENAR EN EL FORM */
+.campo label {
+    display: block;
+    font-weight: bold;
+    /* NEGRITA */
+    margin-bottom: 5px;
+
+}
+
+/* ESTILOS PARA EL CAMPO DE SELECCIÓN-GÉNERO(masculino, femenino o sin especificar) */
+select {
+    display: block;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: none;
+    /* ELIMINA BORDE */
+    background-color: #e6e6e6;
+    border-radius: 5px;
+    /* REDONDEAR */
+    font-size: 16px;
+}
+
+
+/* ESTILOS DE DECORACION Q SOLO AFECTA A "*" QUE HAY PARA MARCAR Q SON OBLIGATORIOS RELLENAR ESOS CAMPS */
+.campo span {
+    color: red;
+}
+
+/* PARA TODAS LAS CUESTIONES A RELLENAR DEL FORMULARIO(afecta a todos los campos del form(text, email, checkbox...)) */
+.campo input,
+.campo textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    /* REDONDEAR */
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* EL BOTON DE ENVIAR EL FORMULARIO(submit) */
+.boton {
+    margin-top: 20px;
+}
+
+/* EL BOTON DE ENVIAR EL FORMULARIO(submit) */
+.boton button {
+    background-color: #4CAF50;
+    border: none;
+    /* ELIMINA BORDE */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    /* BORRA EL SUBRAYDAO Q VIENE X DEFECTO */
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 3px;
+    /* REDONDEAR */
+    cursor: pointer;
+}
+
+/* XA CUADNO CURSOR ENCIMA */
+.boton button:hover {
+    background-color: #45a049;
+}
+
+.campo.mensaje label {
+    vertical-align: top;
+}
+
+.campo.mensaje textarea {
+    height: 100%;
+    width: 100%;
+}
+
+
+@media (min-width: 768px) {
+    .formulario {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .campo {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .campo label {
+        flex-basis: 100%;
+    }
+
+    .campo input,
+    .campo textarea {
+        flex-basis: 100%;
+        width: 100%;
+    }
+
+    .campo.mensaje textarea {
+        height: 150px;
+        width: 100%;
+    }
+
+    .campo:not(:last-child) {
+        margin-right: 20px;
+        width: 100%;
+    }
+
+    .campo:nth-child(2n) {
+        margin-right: 0;
+        width: 100%;
+    }
+}
